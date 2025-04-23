@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DashboardWindow</class>
+ <widget class="QMainWindow" name="DashboardWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Supercash - Dashboard</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QMainWindow, QWidget {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+    QLabel {
+        font-size: 12px;
+    }
+    QPushButton {
+        background-color: #0078d4;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    QPushButton:hover {
+        background-color: #1084d8;
+    }
+    QFrame#menuFrame {
+        background-color: #252526;
+        border-right: 1px solid #3d3d3d;
+    }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QFrame" name="menuFrame">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_logo">
+         <property name="text">
+          <string>SUPERCASH</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="styleSheet">
+          <string>font-size: 20px; font-weight: bold; color: #0078d4; padding: 20px 0;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_vendas">
+         <property name="text">
+          <string>Vendas</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_produtos">
+         <property name="text">
+          <string>Produtos</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_clientes">
+         <property name="text">
+          <string>Clientes</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_relatorios">
+         <property name="text">
+          <string>Relatórios</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_logout">
+         <property name="text">
+          <string>Sair</string>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: #d83848;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <widget class="QWidget" name="page_dashboard">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_welcome">
+          <property name="text">
+           <string>Bem-vindo ao Supercash</string>
+          </property>
+          <property name="styleSheet">
+           <string>font-size: 24px; font-weight: bold; margin: 20px 0;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QFrame" name="frame_vendas">
+            <property name="styleSheet">
+             <string>background-color: #252526; border-radius: 8px; padding: 16px;</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QLabel" name="label_vendas_title">
+               <property name="text">
+                <string>Vendas do Dia</string>
+               </property>
+               <property name="styleSheet">
+                <string>font-size: 16px; font-weight: bold;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_vendas_valor">
+               <property name="text">
+                <string>R$ 0,00</string>
+               </property>
+               <property name="styleSheet">
+                <string>font-size: 24px; color: #0078d4;</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QFrame" name="frame_produtos">
+            <property name="styleSheet">
+             <string>background-color: #252526; border-radius: 8px; padding: 16px;</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLabel" name="label_produtos_title">
+               <property name="text">
+                <string>Produtos em Estoque</string>
+               </property>
+               <property name="styleSheet">
+                <string>font-size: 16px; font-weight: bold;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_produtos_qtd">
+               <property name="text">
+                <string>0</string>
+               </property>
+               <property name="styleSheet">
+                <string>font-size: 24px; color: #0078d4;</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QFrame" name="frame_clientes">
+            <property name="styleSheet">
+             <string>background-color: #252526; border-radius: 8px; padding: 16px;</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QLabel" name="label_clientes_title">
+               <property name="text">
+                <string>Total de Clientes</string>
+               </property>
+               <property name="styleSheet">
+                <string>font-size: 16px; font-weight: bold;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_clientes_qtd">
+               <property name="text">
+                <string>0</string>
+               </property>
+               <property name="styleSheet">
+                <string>font-size: 24px; color: #0078d4;</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+</ui>

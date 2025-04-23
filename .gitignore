@@ -1,0 +1,11 @@
+*.dmg
+*.pkg
+*.zip
+dist/
+build/
+*.app/
+*.spec
+*.egg-info/
+__pycache__/
+*.pyc
+.DS_Store

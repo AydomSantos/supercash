@@ -1,10 +1,207 @@
-2025-06-27 17:27:05,321 - __main__ - INFO - Starting Supercash application
-2025-06-27 17:27:05,322 - __main__ - INFO - Added C:\Users\aydon\Documents\GitHub\supercash to Python path
-2025-06-27 17:27:05,323 - __main__ - INFO - Environment setup completed
-2025-06-27 17:27:05,323 - __main__ - INFO - Initializing database connection
-2025-06-27 17:27:05,325 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
-2025-06-27 17:27:09,420 - __main__ - ERROR - Application error: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
-	Is the server running on that host and accepting TCP/IP connections?
-connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
-	Is the server running on that host and accepting TCP/IP connections?
-
+2025-04-21 14:42:41,456 - __main__ - INFO - Starting Supercash application
+2025-04-21 14:42:41,458 - __main__ - INFO - Added /Users/widleymayksantossilva/Desktop/Supercash to Python path
+2025-04-21 14:42:41,463 - __main__ - INFO - Initializing database connection
+2025-04-21 14:42:41,468 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 14:42:43,286 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 14:42:43,286 - config.database - INFO - Initializing database...
+2025-04-21 14:42:43,684 - config.database - INFO - Connected to postgres database for initialization
+2025-04-21 14:42:43,899 - config.database - INFO - Database supercash_db already exists
+2025-04-21 14:42:43,899 - config.database - INFO - Database initialization completed successfully
+2025-04-21 14:42:43,900 - __main__ - INFO - Creating Qt application instance
+2025-04-21 14:42:44,828 - __main__ - INFO - Initializing login controller
+2025-04-21 14:42:47,427 - __main__ - INFO - Starting application event loop
+2025-04-21 14:43:02,182 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 14:43:04,183 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 14:43:42,348 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 14:43:42,382 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 14:43:42,383 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 14:43:42,453 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 14:43:42,497 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 14:43:42,498 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 14:43:46,290 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 14:43:48,178 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 14:43:48,179 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 14:44:20,451 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 14:44:57,434 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 14:45:07,711 - config.database - INFO - All database connections closed successfully
+2025-04-21 16:37:04,212 - __main__ - INFO - Starting Supercash application
+2025-04-21 16:37:04,214 - __main__ - INFO - Added /Users/widleymayksantossilva/Desktop/Supercash to Python path
+2025-04-21 16:37:04,215 - __main__ - INFO - Initializing database connection
+2025-04-21 16:37:04,221 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 16:37:05,877 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 16:37:05,877 - config.database - INFO - Initializing database...
+2025-04-21 16:37:05,978 - config.database - INFO - Connected to postgres database for initialization
+2025-04-21 16:37:06,056 - config.database - INFO - Database supercash_db already exists
+2025-04-21 16:37:06,056 - config.database - INFO - Database initialization completed successfully
+2025-04-21 16:37:06,057 - __main__ - INFO - Creating Qt application instance
+2025-04-21 16:37:06,777 - __main__ - INFO - Initializing login controller
+2025-04-21 16:37:09,269 - __main__ - INFO - Starting application event loop
+2025-04-21 16:37:35,127 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 16:37:35,170 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 16:37:51,127 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 16:37:51,170 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 16:38:28,820 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 16:38:28,821 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 16:38:34,278 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:35:53,173 - __main__ - INFO - Starting Supercash application
+2025-04-21 18:35:53,175 - __main__ - INFO - Added /Users/widleymayksantossilva/Desktop/Supercash to Python path
+2025-04-21 18:35:53,176 - __main__ - INFO - Initializing database connection
+2025-04-21 18:35:53,178 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:35:53,331 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:35:53,332 - config.database - INFO - Initializing database...
+2025-04-21 18:35:53,370 - config.database - INFO - Connected to postgres database for initialization
+2025-04-21 18:35:53,635 - config.database - INFO - Database supercash_db already exists
+2025-04-21 18:35:53,635 - config.database - INFO - Database initialization completed successfully
+2025-04-21 18:35:53,635 - __main__ - INFO - Creating Qt application instance
+2025-04-21 18:35:56,999 - __main__ - INFO - Initializing login controller
+2025-04-21 18:35:57,810 - __main__ - INFO - Starting application event loop
+2025-04-21 18:36:09,188 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:36:09,224 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:36:09,266 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:36:09,283 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:36:09,283 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 18:36:09,284 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:36:09,341 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:36:09,369 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:36:09,376 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:36:09,413 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:36:09,413 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 18:36:09,414 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:36:11,609 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:36:12,315 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:36:12,331 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:36:12,460 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:36:12,461 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 18:36:12,461 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:36:29,466 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:36:29,628 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:36:29,861 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 18:36:29,915 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:36:29,962 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:36:29,966 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:36:30,012 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:36:30,014 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:36:30,061 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:36:30,061 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 18:36:30,062 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:36:30,080 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:36:57,711 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:36:57,713 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:36:57,714 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:36:57,767 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:36:57,768 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:36:57,768 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:37:04,596 - __main__ - INFO - Starting Supercash application
+2025-04-21 18:37:04,597 - __main__ - INFO - Added /Users/widleymayksantossilva/Desktop/Supercash to Python path
+2025-04-21 18:37:04,597 - __main__ - INFO - Initializing database connection
+2025-04-21 18:37:04,599 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:37:04,670 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:37:04,670 - config.database - INFO - Initializing database...
+2025-04-21 18:37:05,215 - config.database - INFO - Connected to postgres database for initialization
+2025-04-21 18:37:06,461 - config.database - INFO - Database supercash_db already exists
+2025-04-21 18:37:06,461 - config.database - INFO - Database initialization completed successfully
+2025-04-21 18:37:06,462 - __main__ - INFO - Creating Qt application instance
+2025-04-21 18:37:06,790 - __main__ - INFO - Initializing login controller
+2025-04-21 18:37:07,365 - __main__ - INFO - Starting application event loop
+2025-04-21 18:37:16,342 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:37:16,367 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:37:16,381 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:37:16,422 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:37:16,422 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 18:37:16,422 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:37:16,475 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:37:16,511 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:37:16,515 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:37:16,558 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:37:16,558 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 18:37:16,559 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:37:18,601 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:37:19,412 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:37:19,439 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:37:19,467 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:37:19,516 - config.database - DEBUG - Connection returned to pool successfully
+2025-04-21 18:37:19,516 - config.database - INFO - All database connections closed successfully
+2025-04-21 18:37:19,528 - config.database - INFO - Database configuration loaded: host=localhost, port=5432, user=postgres, dbname=supercash_db
+2025-04-21 18:37:19,562 - config.database - INFO - Database connection pool initialized successfully
+2025-04-21 18:37:19,566 - config.database - INFO - All database connections closed successfully
+2025-04-21 19:02:42,672 - config.database - INFO - All database connections closed successfully
+2025-04-21 19:02:42,675 - config.database - INFO - All database connections closed successfully
+2025-04-21 19:02:42,675 - config.database - INFO - All database connections closed successfully
+2025-04-21 19:02:42,676 - config.database - INFO - All database connections closed successfully
+2025-06-27 18:33:37,607 - __main__ - INFO - Starting Supercash application
+2025-06-27 18:33:37,612 - __main__ - INFO - Added C:\Users\aydon\OneDrive\Desktop\Python to Python path
+2025-06-27 18:33:37,704 - __main__ - INFO - Environment setup completed
+2025-06-27 18:33:37,745 - __main__ - INFO - Initializing database connection
+2025-06-27 18:33:37,767 - config.database - INFO - Database path: C:\Users\aydon\OneDrive\Desktop\Python\supercash.db
+2025-06-27 18:33:37,797 - config.database - INFO - Initializing SQLite database...
+2025-06-27 18:33:37,933 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:33:37,956 - config.database - INFO - Database initialization completed successfully
+2025-06-27 18:33:37,960 - __main__ - INFO - Creating Qt application instance
+2025-06-27 18:33:38,165 - __main__ - INFO - Initializing login controller
+2025-06-27 18:36:05,891 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:36:21,436 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:40:57,375 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:41:48,498 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:41:50,623 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:44:28,524 - config.database - INFO - Database connections cleanup completed
+2025-06-27 18:44:36,515 - __main__ - INFO - Starting Supercash application
+2025-06-27 18:44:36,517 - __main__ - INFO - Added C:\Users\aydon\OneDrive\Desktop\Python to Python path
+2025-06-27 18:44:36,517 - __main__ - INFO - Environment setup completed
+2025-06-27 18:44:36,518 - __main__ - INFO - Initializing database connection
+2025-06-27 18:44:36,518 - config.database - INFO - Database path: C:\Users\aydon\OneDrive\Desktop\Python\supercash.db
+2025-06-27 18:44:36,519 - config.database - INFO - Initializing SQLite database...
+2025-06-27 18:44:36,524 - config.database - ERROR - Failed to initialize database: UNIQUE constraint failed: usuarios.username
+Traceback (most recent call last):
+  File "C:\Users\aydon\OneDrive\Desktop\Python\config\database.py", line 75, in initialize
+    conn.execute(statement)
+    ~~~~~~~~~~~~^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: usuarios.username
+2025-06-27 18:44:36,553 - __main__ - ERROR - Application error: UNIQUE constraint failed: usuarios.username
+2025-06-27 18:44:36,617 - config.database - INFO - Database connections cleanup completed
+2025-06-27 18:45:37,847 - __main__ - INFO - Starting Supercash application
+2025-06-27 18:45:37,849 - __main__ - INFO - Added C:\Users\aydon\OneDrive\Desktop\Python to Python path
+2025-06-27 18:45:37,849 - __main__ - INFO - Environment setup completed
+2025-06-27 18:45:37,850 - __main__ - INFO - Initializing database connection
+2025-06-27 18:45:37,851 - config.database - INFO - Database path: C:\Users\aydon\OneDrive\Desktop\Python\supercash.db
+2025-06-27 18:45:37,851 - config.database - INFO - Initializing SQLite database...
+2025-06-27 18:45:37,856 - config.database - ERROR - Failed to initialize database: UNIQUE constraint failed: usuarios.username
+Traceback (most recent call last):
+  File "C:\Users\aydon\OneDrive\Desktop\Python\config\database.py", line 75, in initialize
+    conn.execute(statement)
+    ~~~~~~~~~~~~^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: usuarios.username
+2025-06-27 18:45:37,885 - __main__ - ERROR - Application error: UNIQUE constraint failed: usuarios.username
+2025-06-27 18:45:37,947 - config.database - INFO - Database connections cleanup completed
+2025-06-27 18:45:59,925 - __main__ - INFO - Starting Supercash application
+2025-06-27 18:45:59,945 - __main__ - INFO - Added C:\Users\aydon\OneDrive\Desktop\Python to Python path
+2025-06-27 18:45:59,946 - __main__ - INFO - Environment setup completed
+2025-06-27 18:45:59,947 - __main__ - INFO - Initializing database connection
+2025-06-27 18:45:59,948 - config.database - INFO - Database path: C:\Users\aydon\OneDrive\Desktop\Python\supercash.db
+2025-06-27 18:45:59,975 - config.database - INFO - Initializing SQLite database...
+2025-06-27 18:46:00,022 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:46:00,073 - config.database - INFO - Database initialization completed successfully
+2025-06-27 18:46:00,092 - __main__ - INFO - Creating Qt application instance
+2025-06-27 18:46:00,176 - __main__ - INFO - Initializing login controller
+2025-06-27 18:46:23,778 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:47:38,010 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:47:38,094 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:47:39,908 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:48:03,235 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:48:03,248 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:48:13,500 - config.database - INFO - Database connections cleanup completed
+2025-06-27 18:48:16,901 - __main__ - INFO - Starting Supercash application
+2025-06-27 18:48:16,903 - __main__ - INFO - Added C:\Users\aydon\OneDrive\Desktop\Python to Python path
+2025-06-27 18:48:16,910 - __main__ - INFO - Environment setup completed
+2025-06-27 18:48:16,913 - __main__ - INFO - Initializing database connection
+2025-06-27 18:48:16,917 - config.database - INFO - Database path: C:\Users\aydon\OneDrive\Desktop\Python\supercash.db
+2025-06-27 18:48:16,920 - config.database - INFO - Initializing SQLite database...
+2025-06-27 18:48:16,931 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:48:16,935 - config.database - INFO - Database initialization completed successfully
+2025-06-27 18:48:16,936 - __main__ - INFO - Creating Qt application instance
+2025-06-27 18:48:17,040 - __main__ - INFO - Initializing login controller
+2025-06-27 18:48:24,729 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:48:24,803 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:48:29,550 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:48:29,600 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:50:51,130 - config.database - DEBUG - Connection closed successfully
+2025-06-27 18:50:53,142 - config.database - DEBUG - Connection closed successfully

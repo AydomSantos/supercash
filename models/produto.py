@@ -1,4 +1,5 @@
 from config.database import Database
+import sqlite3
 
 class Produto:
     def __init__(self, id=None, nome=None, codigo_barras=None, categoria_id=None,
@@ -27,33 +28,32 @@ class Produto:
                         nome, codigo_barras, categoria_id, preco_custo,
                         preco_venda, estoque_atual, estoque_minimo, fornecedor
                     )
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-                    RETURNING id
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     self.nome, self.codigo_barras, self.categoria_id,
                     self.preco_custo, self.preco_venda, self.estoque_atual,
                     self.estoque_minimo, self.fornecedor
                 ))
-                self.id = cur.fetchone()[0]
+                self.id = cur.lastrowid
             else:
                 # Update existing product
                 cur.execute("""
                     UPDATE produtos
-                    SET nome = %s, codigo_barras = %s, categoria_id = %s,
-                        preco_custo = %s, preco_venda = %s, estoque_atual = %s,
-                        estoque_minimo = %s, fornecedor = %s
-                    WHERE id = %s
+                    SET nome = ?, codigo_barras = ?, categoria_id = ?,
+                        preco_custo = ?, preco_venda = ?, estoque_atual = ?,
+                        estoque_minimo = ?, fornecedor = ?
+                    WHERE id = ?
                 """, (
                     self.nome, self.codigo_barras, self.categoria_id,
                     self.preco_custo, self.preco_venda, self.estoque_atual,
                     self.estoque_minimo, self.fornecedor, self.id
                 ))
+            conn.commit()
             success = True
         except Exception as e:
             print(f"Error saving product: {e}")
             success = False
         finally:
-            cur.close()
             self.db.return_connection(conn)
         
         return success
@@ -65,7 +65,7 @@ class Produto:
         cur = conn.cursor()
         
         try:
-            cur.execute("SELECT * FROM produtos WHERE id = %s", (produto_id,))
+            cur.execute("SELECT * FROM produtos WHERE id = ?", (produto_id,))
             produto_data = cur.fetchone()
             
             if produto_data:
@@ -82,7 +82,6 @@ class Produto:
                 )
             return None
         finally:
-            cur.close()
             db.return_connection(conn)
 
     @classmethod
@@ -92,7 +91,7 @@ class Produto:
         cur = conn.cursor()
         
         try:
-            cur.execute("SELECT * FROM produtos WHERE codigo_barras = %s", (codigo_barras,))
+            cur.execute("SELECT * FROM produtos WHERE codigo_barras = ?", (codigo_barras,))
             produto_data = cur.fetchone()
             
             if produto_data:
@@ -109,7 +108,6 @@ class Produto:
                 )
             return None
         finally:
-            cur.close()
             db.return_connection(conn)
 
     @classmethod
@@ -142,7 +140,6 @@ class Produto:
             
             return produtos
         finally:
-            cur.close()
             db.return_connection(conn)
 
     def update_stock(self, quantidade):
@@ -153,18 +150,22 @@ class Produto:
         try:
             cur.execute("""
                 UPDATE produtos
-                SET estoque_atual = estoque_atual + %s
-                WHERE id = %s
-                RETURNING estoque_atual
+                SET estoque_atual = estoque_atual + ?
+                WHERE id = ?
             """, (quantidade, self.id))
             
-            self.estoque_atual = cur.fetchone()[0]
+            # Get updated stock value
+            cur.execute("SELECT estoque_atual FROM produtos WHERE id = ?", (self.id,))
+            result = cur.fetchone()
+            if result:
+                self.estoque_atual = result[0]
+            
+            conn.commit()
             success = True
         except Exception as e:
             print(f"Error updating stock: {e}")
             success = False
         finally:
-            cur.close()
             self.db.return_connection(conn)
             
         return success
@@ -177,13 +178,13 @@ class Produto:
         cur = conn.cursor()
         
         try:
-            cur.execute("DELETE FROM produtos WHERE id = %s", (self.id,))
+            cur.execute("DELETE FROM produtos WHERE id = ?", (self.id,))
+            conn.commit()
             success = cur.rowcount > 0
         except Exception as e:
             print(f"Error deleting product: {e}")
             success = False
         finally:
-            cur.close()
             self.db.return_connection(conn)
             
         return success

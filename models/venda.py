@@ -1,5 +1,7 @@
+
 from config.database import Database
 from datetime import datetime
+import sqlite3
 
 class Venda:
     def __init__(self, id=None, cliente_id=None, usuario_id=None, data_venda=None,
@@ -34,11 +36,11 @@ class Venda:
     
     def save(self):
         conn = self.db.get_connection()
-        cur = conn.cursor()
         
         try:
+            cur = conn.cursor()
             # Start transaction
-            cur.execute("BEGIN")
+            conn.execute("BEGIN")
             
             if self.id is None:
                 # Insert new sale
@@ -47,13 +49,12 @@ class Venda:
                         cliente_id, usuario_id, data_venda,
                         valor_total, desconto, forma_pagamento
                     )
-                    VALUES (%s, %s, %s, %s, %s, %s)
-                    RETURNING id
+                    VALUES (?, ?, ?, ?, ?, ?)
                 """, (
                     self.cliente_id, self.usuario_id, self.data_venda,
                     self.valor_total, self.desconto, self.forma_pagamento
                 ))
-                self.id = cur.fetchone()[0]
+                self.id = cur.lastrowid
                 
                 # Insert sale items
                 for item in self.itens:
@@ -62,7 +63,7 @@ class Venda:
                             venda_id, produto_id, quantidade,
                             preco_unitario, subtotal
                         )
-                        VALUES (%s, %s, %s, %s, %s)
+                        VALUES (?, ?, ?, ?, ?)
                     """, (
                         self.id, item['produto_id'], item['quantidade'],
                         item['preco_unitario'], item['subtotal']
@@ -71,19 +72,18 @@ class Venda:
                     # Update product stock
                     cur.execute("""
                         UPDATE produtos
-                        SET estoque_atual = estoque_atual - %s
-                        WHERE id = %s
+                        SET estoque_atual = estoque_atual - ?
+                        WHERE id = ?
                     """, (item['quantidade'], item['produto_id']))
             
             # Commit transaction
-            cur.execute("COMMIT")
+            conn.commit()
             success = True
         except Exception as e:
-            cur.execute("ROLLBACK")
+            conn.rollback()
             print(f"Error saving sale: {e}")
             success = False
         finally:
-            cur.close()
             self.db.return_connection(conn)
         
         return success
@@ -92,11 +92,11 @@ class Venda:
     def get_by_id(cls, venda_id):
         db = Database()
         conn = db.get_connection()
-        cur = conn.cursor()
         
         try:
+            cur = conn.cursor()
             # Get sale data
-            cur.execute("SELECT * FROM vendas WHERE id = %s", (venda_id,))
+            cur.execute("SELECT * FROM vendas WHERE id = ?", (venda_id,))
             venda_data = cur.fetchone()
             
             if not venda_data:
@@ -117,7 +117,7 @@ class Venda:
             cur.execute("""
                 SELECT produto_id, quantidade, preco_unitario, subtotal
                 FROM itens_venda
-                WHERE venda_id = %s
+                WHERE venda_id = ?
             """, (venda_id,))
             
             for item_data in cur.fetchall():
@@ -130,22 +130,21 @@ class Venda:
             
             return venda
         finally:
-            cur.close()
             db.return_connection(conn)
 
     @classmethod
     def get_sales_by_period(cls, start_date, end_date):
         db = Database()
         conn = db.get_connection()
-        cur = conn.cursor()
         
         try:
+            cur = conn.cursor()
             cur.execute("""
                 SELECT v.*, c.nome as cliente_nome, u.nome as usuario_nome
                 FROM vendas v
                 LEFT JOIN clientes c ON v.cliente_id = c.id
                 LEFT JOIN usuarios u ON v.usuario_id = u.id
-                WHERE DATE(v.data_venda) BETWEEN %s AND %s
+                WHERE DATE(v.data_venda) BETWEEN ? AND ?
                 ORDER BY v.data_venda DESC
             """, (start_date, end_date))
             
@@ -163,7 +162,6 @@ class Venda:
             
             return sales
         finally:
-            cur.close()
             db.return_connection(conn)
 
     def delete(self):
@@ -171,42 +169,41 @@ class Venda:
             return False
             
         conn = self.db.get_connection()
-        cur = conn.cursor()
         
         try:
+            cur = conn.cursor()
             # Start transaction
-            cur.execute("BEGIN")
+            conn.execute("BEGIN")
             
             # Get items to restore stock
             cur.execute("""
                 SELECT produto_id, quantidade
                 FROM itens_venda
-                WHERE venda_id = %s
+                WHERE venda_id = ?
             """, (self.id,))
             
             # Restore stock for each item
             for item in cur.fetchall():
                 cur.execute("""
                     UPDATE produtos
-                    SET estoque_atual = estoque_atual + %s
-                    WHERE id = %s
+                    SET estoque_atual = estoque_atual + ?
+                    WHERE id = ?
                 """, (item[1], item[0]))
             
             # Delete sale items
-            cur.execute("DELETE FROM itens_venda WHERE venda_id = %s", (self.id,))
+            cur.execute("DELETE FROM itens_venda WHERE venda_id = ?", (self.id,))
             
             # Delete sale
-            cur.execute("DELETE FROM vendas WHERE id = %s", (self.id,))
+            cur.execute("DELETE FROM vendas WHERE id = ?", (self.id,))
             
             # Commit transaction
-            cur.execute("COMMIT")
+            conn.commit()
             success = True
         except Exception as e:
-            cur.execute("ROLLBACK")
+            conn.rollback()
             print(f"Error deleting sale: {e}")
             success = False
         finally:
-            cur.close()
             self.db.return_connection(conn)
             
         return success

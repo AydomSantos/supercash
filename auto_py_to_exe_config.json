@@ -1,0 +1,62 @@
+
+{
+  "version": "auto-py-to-exe-configuration_v1",
+  "pyinstallerOptions": [
+    {
+      "optionDest": "noconfirm",
+      "value": true
+    },
+    {
+      "optionDest": "filenames",
+      "value": "main.py"
+    },
+    {
+      "optionDest": "onefile",
+      "value": false
+    },
+    {
+      "optionDest": "console",
+      "value": false
+    },
+    {
+      "optionDest": "icon_file",
+      "value": "assets/icon.ico"
+    },
+    {
+      "optionDest": "name",
+      "value": "Supercash"
+    },
+    {
+      "optionDest": "add_data",
+      "value": "ui;ui"
+    },
+    {
+      "optionDest": "add_data",
+      "value": "assets;assets"
+    },
+    {
+      "optionDest": "add_data",
+      "value": ".env;."
+    },
+    {
+      "optionDest": "hidden_import",
+      "value": "PySide6.QtXml"
+    },
+    {
+      "optionDest": "collect_data",
+      "value": "qt_material"
+    },
+    {
+      "optionDest": "collect_data",
+      "value": "reportlab"
+    },
+    {
+      "optionDest": "collect_all",
+      "value": "psycopg2-binary"
+    }
+  ],
+  "nonPyinstallerOptions": {
+    "increaseRecursionLimit": true,
+    "manualArguments": ""
+  }
+}

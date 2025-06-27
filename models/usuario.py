@@ -1,5 +1,7 @@
+
 from passlib.hash import pbkdf2_sha256
 from config.database import Database
+import sqlite3
 
 class Usuario:
     def __init__(self, id=None, username=None, password=None, nome=None, nivel_acesso=None):
@@ -28,19 +30,18 @@ class Usuario:
                 # Insert new user
                 cur.execute("""
                     INSERT INTO usuarios (username, password_hash, nome, nivel_acesso)
-                    VALUES (%s, %s, %s, %s)
-                    RETURNING id
+                    VALUES (?, ?, ?, ?)
                 """, (self.username, self.password_hash, self.nome, self.nivel_acesso))
-                self.id = cur.fetchone()[0]
+                self.id = cur.lastrowid
             else:
                 # Update existing user
                 cur.execute("""
                     UPDATE usuarios
-                    SET username = %s, password_hash = %s, nome = %s, nivel_acesso = %s
-                    WHERE id = %s
+                    SET username = ?, password_hash = ?, nome = ?, nivel_acesso = ?
+                    WHERE id = ?
                 """, (self.username, self.password_hash, self.nome, self.nivel_acesso, self.id))
             
-            cur.close()
+            conn.commit()
             return self.id
         finally:
             if conn:
@@ -61,10 +62,8 @@ class Usuario:
             conn = db.get_connection()
             cur = conn.cursor()
             
-            cur.execute("SELECT * FROM usuarios WHERE username = %s", (username,))
+            cur.execute("SELECT * FROM usuarios WHERE username = ?", (username,))
             user_data = cur.fetchone()
-            
-            cur.close()
             
             if user_data:
                 user = cls(
@@ -88,10 +87,8 @@ class Usuario:
             conn = db.get_connection()
             cur = conn.cursor()
             
-            cur.execute("SELECT * FROM usuarios WHERE id = %s", (user_id,))
+            cur.execute("SELECT * FROM usuarios WHERE id = ?", (user_id,))
             user_data = cur.fetchone()
-            
-            cur.close()
             
             if user_data:
                 return cls(
@@ -126,7 +123,6 @@ class Usuario:
                     nivel_acesso=user_data[4]
                 ))
             
-            cur.close()
             return users
         finally:
             if conn:
@@ -137,15 +133,16 @@ class Usuario:
             return False
             
         conn = self.db.get_connection()
-        cur = conn.cursor()
         
         try:
-            cur.execute("DELETE FROM usuarios WHERE id = %s", (self.id,))
+            cur = conn.cursor()
+            cur.execute("DELETE FROM usuarios WHERE id = ?", (self.id,))
+            conn.commit()
             success = cur.rowcount > 0
         except Exception as e:
             print(f"Error deleting user: {e}")
             success = False
         finally:
-            cur.close()
+            self.db.return_connection(conn)
             
         return success
